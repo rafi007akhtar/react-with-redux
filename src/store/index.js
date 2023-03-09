@@ -12,6 +12,11 @@ function counterReducer(state = defaultState, action) {
       return {
         counter: state.counter - 1,
       };
+    case "INCREASE": {  // to increase by n
+        return {
+            counter: state.counter + action.n
+        }
+    }
     default:
       return state;
   }

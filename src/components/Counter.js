@@ -2,6 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 
 import classes from "./Counter.module.css";
 
+const N = 10;
+
 const Counter = () => {
   const counter = useSelector((state) => state.counter);
   const dispatchFn = useDispatch();
@@ -18,6 +20,9 @@ const Counter = () => {
         </button>
         <button onClick={() => dispatchFn({ type: "DECREMENT" })}>
           Decrement
+        </button>
+        <button onClick={() => dispatchFn({ type: "INCREASE", n: N })}>
+          Increase by { N }
         </button>
       </div>
       <button onClick={toggleCounterHandler}>Toggle Counter</button>

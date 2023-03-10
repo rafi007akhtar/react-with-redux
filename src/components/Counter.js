@@ -6,12 +6,11 @@ import classes from "./Counter.module.css";
 const N = 10;
 
 const Counter = () => {
-  const counter = useSelector((state) => state.counter);
-  const showCounter = useSelector((state) => state.showCounter);
+  const counter = useSelector((state) => state.counter.counter);
+  const showCounter = useSelector((state) => state.counter.showCounter);
   const dispatchFn = useDispatch();
 
   const toggleCounterHandler = () => {
-    // dispatchFn({ type: "TOGGLE" });
     dispatchFn(counterActions.toggleCounter());
   };
 
